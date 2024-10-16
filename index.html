@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gutendex Book</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wishlist.html">Wishlist</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search books by title..." oninput="searchBooks(event)">
+        </div>
+    
+        <!-- Filter by Genre -->
+        <div class="filter-container">
+            <label for="genreSelect">Filter by Genre:</label>
+            <select id="genreSelect" onchange="filterByGenre()">
+                <option value="">All Genres</option>
+                <!-- Dynamically populated from API -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Book List -->
+    <div id="bookList" class="book-list">
+        <!-- Books will be dynamically inserted here -->
+    </div>
+
+    <!-- Pagination -->
+    <div id="pagination" class="pagination">
+        <button onclick="prevPage()">Previous</button>
+        <div id="pageNumbers"></div>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Gutenberg Books. All rights reserved.</p>
+    </footer>
+    
+    <script src="./js/api.js"></script>
+    <script src="./js/books.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/filters.js"></script>
+    <script src="./js/wishlist.js"></script>
+    <script src="./js/pagination.js"></script>
+</body>
+</html>
