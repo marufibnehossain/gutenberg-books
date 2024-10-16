@@ -9,42 +9,55 @@
 <body>
     <!-- Navbar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="wishlist.html">Wishlist</a>
+        <div class="navbar">
+            <div class="nav">
+                <div class="logo text-pacifico">Library</div>
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="wishlist.html">Wishlist</a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <div class="search-container">
+                    <input type="text" id="searchBar" placeholder="Search books by title..." oninput="searchBooks(event)">
+                </div>
+            
+                <div class="filter-container">
+                    <!-- <label for="genreSelect">Filter by Genre:</label> -->  
+                    <select id="genreSelect" onchange="filterByGenre()">
+                        <option value="">All Genres</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <!-- Search Bar -->
-    <div>
-        <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search books by title..." oninput="searchBooks(event)">
-        </div>
-    
-        <!-- Filter by Genre -->
-        <div class="filter-container">
-            <label for="genreSelect">Filter by Genre:</label>
-            <select id="genreSelect" onchange="filterByGenre()">
-                <option value="">All Genres</option>
-                <!-- Dynamically populated from API -->
-            </select>
-        </div>
-    </div>
 
     <!-- Book List -->
-    <div id="bookList" class="book-list">
-        <!-- Books will be dynamically inserted here -->
-    </div>
-
-    <!-- Pagination -->
-    <div id="pagination" class="pagination">
-        <button onclick="prevPage()">Previous</button>
-        <div id="pageNumbers"></div>
-        <button onclick="nextPage()">Next</button>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Gutenberg Books. All rights reserved.</p>
-    </footer>
+    <div class="body">
+        <div id="bookList" class="book-list">
+        </div>
     
+        <!-- Pagination -->
+        <div id="pagination" class="pagination">
+            <button onclick="prevPage()">Previous</button>
+            <div id="pageNumbers"></div>
+            <button onclick="nextPage()">Next</button>
+        </div>
+    
+        <footer>
+            <p>&copy; 2023 Gutenberg Books. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const data = await fetchBooks(currentPageUrl);
+            renderBooks(data.results);
+            populateGenres();
+        });
+    </script>   
     <script src="./js/api.js"></script>
     <script src="./js/books.js"></script>
     <script src="./js/search.js"></script>
