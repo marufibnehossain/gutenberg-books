@@ -36,8 +36,16 @@
 
     <!-- Book List -->
     <div class="body">
-        <div id="bookList" class="book-list">
+        <div class="hero-banner">
+            <div class="banner">
+                <div>
+                    <h2>Hello, Readers</h2>
+                    <p>Selection of the best books, just for you.</p>
+                </div>
+                <div><img src="./assets/rb_2149341898.png" alt=""></div>
+            </div>
         </div>
+        <div id="bookList" class="book-list"></div>
     
         <!-- Pagination -->
         <div id="pagination" class="pagination">
@@ -52,9 +60,8 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const data = await fetchBooks(currentPageUrl);
-            renderBooks(data.results);
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAndRenderBooks();
             populateGenres();
         });
     </script>   
@@ -64,5 +71,6 @@
     <script src="./js/filters.js"></script>
     <script src="./js/wishlist.js"></script>
     <script src="./js/pagination.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
