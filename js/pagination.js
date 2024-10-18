@@ -19,9 +19,11 @@ async function fetchAndRenderBooks() {
     }
 }
 
-function updatePaginationUI() {
+function updatePaginationUI(currentPage, totalPages) {
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
+    if (prevButton) prevButton.disabled = currentPage === 1;
+    if (nextButton) nextButton.disabled = currentPage === totalPages;
 
     prevButton.disabled = currentPage === 1;
     nextButton.disabled = currentPage === totalPages;
@@ -42,4 +44,4 @@ async function nextPage() {
 }
 
 // Initial load
-fetchAndRenderBooks();
+// fetchAndRenderBooks();

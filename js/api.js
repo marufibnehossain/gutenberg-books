@@ -14,3 +14,18 @@ async function fetchBooks(url) {
         console.error('Error fetching books:', error);
     }
 }
+
+function fetchBookDetails(bookId) {
+    return fetch(`https://gutendex.com/books/${bookId}`)
+        .then(response => response.json())
+        .then(data => {
+            return {
+                id: data.id,
+                title: data.title,
+                authors: data.authors,
+                formats: data.formats,
+                bookshelves: data.bookshelves,
+                formats: data.formats
+            };
+        });
+}

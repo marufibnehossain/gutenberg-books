@@ -31,7 +31,7 @@ function filterByGenre(props) {
 genreSelect.addEventListener('change', () => {
     filterByGenre({
         genreSelect: document.getElementById('genreSelect'),
-        bookList: document.getElementById('bookList')
+        bookList: document.getElementById('bookList') || document.getElementById('wishlist')
     });
 });
 
