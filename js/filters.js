@@ -1,8 +1,5 @@
 const genreSelect = document.getElementById('genreSelect');
 
-/**
- * Fetch genres from the API and populate the dropdown menu.
- */
 async function populateGenres() {
     const data = await fetchBooks(API_URL);
     const genres = new Set(data.results.flatMap(book => [...book.bookshelves, ...book.subjects]));
@@ -15,9 +12,6 @@ async function populateGenres() {
 }
 
 
-/**
- * Filters books based on selected genre.
- */
 function filterByGenre(props) {
     const { genreSelect, bookList } = props;
     const selectedGenre = genreSelect.value.toLowerCase();
@@ -36,9 +30,3 @@ genreSelect.addEventListener('change', () => {
 });
 
 
-// Populate genres on page load
-// document.addEventListener('DOMContentLoaded', async () => {
-//     const data = await fetchBooks(currentPageUrl);
-//     renderBooks(data.results);
-//     populateGenres();
-// });

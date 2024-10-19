@@ -6,7 +6,7 @@ async function fetchAndRenderBooks() {
     loadingIndicator.textContent = 'Loading...';
     document.getElementById('bookList').appendChild(loadingIndicator);
     try {
-        const limit = 21; // Set your desired number of books per page
+        const limit = 21;
         const data = await fetchBooks(`${API_URL}?page=${currentPage}&limit=${limit}`);
         renderBooks(data.results.slice(0, limit));
         totalPages = Math.ceil(data.count / limit);
@@ -42,6 +42,3 @@ async function nextPage() {
         await fetchAndRenderBooks();
     }
 }
-
-// Initial load
-// fetchAndRenderBooks();

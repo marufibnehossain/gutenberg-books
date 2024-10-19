@@ -76,7 +76,7 @@ function renderWishlist() {
 
 
 function removeFromWishlist(bookId) {
-    addToWishlist(bookId); // This will toggle the book in/out of the wishlist
+    addToWishlist(bookId); 
     const bookElement = document.querySelector(`.book[data-book-id="${bookId}"]`);
     if (bookElement) {
         bookElement.remove();
@@ -100,4 +100,3 @@ function goToBookDetails(bookId) {
     window.location.href = `book-details.html?id=${bookId}`;
 }
 
-// document.addEventListener('DOMContentLoaded', initWishlist);

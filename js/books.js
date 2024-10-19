@@ -1,9 +1,6 @@
 const bookList = document.getElementById('bookList');
 
-/**
- * Renders a list of books on the page.
- * @param {Array} books - The array of books to display.
- */
+
 
 function renderBooks(books) {
     const bookElements = books.map(book => {

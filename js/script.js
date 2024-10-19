@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('nav');
-    const scrollThreshold = 20; // Adjust this value as needed
+    const scrollThreshold = 20;
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > scrollThreshold) {
