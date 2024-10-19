@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
         <div class="navbar">
             <div class="nav">
@@ -25,7 +24,6 @@
                 </div>
             
                 <div class="filter-container">
-                    <!-- <label for="genreSelect">Filter by Genre:</label> -->  
                     <select id="genreSelect" onchange="filterByGenre()">
                         <option value="">All Genres</option>
                     </select>
@@ -35,20 +33,9 @@
     </nav>
 
 
-    <!-- Book List -->
     <div class="body content-wrapper">
-        <!-- <div class="hero-banner">
-            <div class="banner">
-                <div>
-                    <h2>Hello, Readers</h2>
-                    <p>Selection of the best books, just for you.</p>
-                </div>
-                <div><img src="./assets/rb_2149341898.png" alt=""></div>
-            </div>
-        </div> -->
         <div id="bookList" class="book-list"></div>
     
-        <!-- Pagination -->
         <div id="pagination" class="pagination">
             <button onclick="prevPage()">Previous</button>
             <div id="pageNumbers"></div>
@@ -69,6 +56,7 @@
     </script>   
     <script src="./js/api.js"></script>
     <script src="./js/books.js"></script>
+    <script src="./js/book-details.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/filters.js"></script>
     <script src="./js/wishlist.js"></script>

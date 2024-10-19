@@ -5,20 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Details</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="wishlist.html">Wishlist</a>
+        <div class="navbar">
+            <div class="nav">
+                <div class="logo text-pacifico">Library</div>
+                <div>
+                    <a href="index.html">Home</a>
+                    <a href="wishlist.html">Wishlist</a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <div class="search-container">
+                    <input type="text" id="searchBar" placeholder="Search books by title..." oninput="searchBooks(event)">
+                </div>
+            
+                <div class="filter-container">
+                    <select id="genreSelect" onchange="filterByGenre()">
+                        <option value="">All Genres</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <!-- Book Details -->
-    <div id="bookDetails" class="book-details">
-        <!-- Book details will be dynamically inserted here -->
+    <div class="content-wrapper body">
+        <div id="bookDetails" class="book-details ">
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Gutenberg Books. All rights reserved.</p>
+    </footer>
 
     <script src="./js/api.js"></script>
     <script src="./js/wishlist.js"></script>
+    <script src="./js/book-details.js"></script>
 </body>
 </html>

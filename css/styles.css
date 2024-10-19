@@ -13,7 +13,6 @@ body {
 .content-wrapper {
     flex: 1 0 auto;
 }
-
 .text-pacifico {
     font-family: 'Pacifico', cursive;
 }
@@ -113,7 +112,6 @@ nav a {
 .book-list {
     display: grid;
     /* grid-template-columns: repeat(3, minmax(250px, 1fr)); */
-    grid-template-columns: repeat(3, 1fr) !important;
     gap: 20px;
     padding: 20px;
 }
@@ -138,10 +136,13 @@ nav a {
     width: 40%;
     height: 100%;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .book-info {
     display: flex;
+    flex-wrap: wrap;
+    width: 60%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -150,9 +151,11 @@ nav a {
 .book h3 {
     font-size: 1.2rem;
     margin: 2px 0;
+    cursor: pointer;
 }
 
 .book p {
+    word-break: break-all;
     font-size: 0.9rem;
     color: #666;
 }
@@ -212,20 +215,37 @@ footer{
     bottom: 0;
 }
 
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1150px) {
     .book-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(3, 1fr) !important;
     }
     .body, .navbar {
         width: 80%;
         margin: 0 auto;
     }
-    
+    .book-details{
+        width: 60%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 998px) {
+    .book-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .body, .navbar {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .book-details{
+        width: 80%;
+        margin: auto;
+    }
 }
 
 @media screen and (max-width: 997px) {
     .book-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
     .body, .navbar {
         width: 95%;
@@ -238,14 +258,18 @@ footer{
 
 }
 
-@media screen and (max-width: 456px) {
+@media screen and (max-width: 556px) {
     .book-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(1, 1fr);
     }
     .body, .navbar {
         width: 95%;
         margin: 0 auto;
     }    
+    .nav{
+        flex-direction: column;
+        gap: 10px;
+    }
     .filter{
         flex-direction: column;
     }
@@ -254,5 +278,8 @@ footer{
     }
     .search-container input{
         width: 250px;
+    }
+    .filter{
+        padding: 0px;
     }
 }
